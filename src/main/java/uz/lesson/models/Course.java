@@ -1,11 +1,9 @@
-package uz.lesson2.models;
+package uz.lesson.models;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.springframework.stereotype.Component;
 
-@Component
 @Data
 @AllArgsConstructor
 @NoArgsConstructor

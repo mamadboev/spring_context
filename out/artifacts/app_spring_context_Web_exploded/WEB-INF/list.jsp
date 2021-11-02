@@ -9,20 +9,25 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>Course List</title>
 </head>
 <body>
-<h3>Welcome User!</h3>
-<table width="60%" border="2px solid red">
-    <c:forEach items="${lists}" var="oneCourse">
-        <tr>
-            <td>${oneCourse.courseName}</td>
-            <td>${oneCourse.courseInfo}</td>
-            <td>${oneCourse.courseNumber}</td>
-        </tr>
-    </c:forEach>
-</table>
+<h3>Welcome User! <c:if test="${not empty message}">${message}</c:if></h3>
+<form action="/addCourse" method="post">
+    <label for="courseNumber">courseNumber</label>
+    <input type="number" name="courseNumber" id="courseNumber">
+    <br>
+    <label for="courseName">courseName</label>
+    <input type="text" name="courseName" id="courseName">
+    <br>
+    <label for="courseInfo">courseInfo</label>
+    <input type="text" name="courseInfo" id="courseInfo">
+    <br>
+    <input type="submit" value="Send">
+</form>
+
+<a href="/allList">List</a>
 </body>
 </html>
